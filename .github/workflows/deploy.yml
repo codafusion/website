@@ -1,0 +1,14 @@
+name: Build and Deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Deploy to Plesk
+                run: curl -X POST "https://ae8a9.netcup.net:8443/modules/git/public/web-hook.php?uuid=865133fd-0842-8be8-7b70-9439ab89cc49"
+
